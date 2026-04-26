@@ -181,7 +181,7 @@ footer h2:first-of-type{
   padding-top: 1em;
 }
 
-footer h2, footer a, footer span{
+footer h2, footer a, footer span, footer small{
   color: var(--white);
   display: block;
 }
@@ -194,10 +194,16 @@ address a:first-of-type{
   margin-top: 1rem;
 }
 
-footer address{
+footer address, footer small{
   font-family: var(--body-font);
   color: var(--white);
   margin-top: 1rem;
+}
+
+footer small{
+  display:block;
+  text-align:center;
+  margin: 1rem 0;
 }
 
 #socialMedia{
@@ -232,7 +238,7 @@ header img{
   margin: 1rem auto;
 }
 
-#homeMain span{
+#homeMain{
   display: block;
 }
 
@@ -265,11 +271,19 @@ header img{
 }
 
 /* -----------------------SMALL STYLES--------------------- */
-@media screen and (min-width: 500px){
+@media screen and (min-width: 500px){  
+
   header{
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
+  }
+
+    #logo{
+    display: block;
+    width: 90px;
+    grid-column: 1/2;
+    margin: 0 0 0 auto;
   }
   
   h1{
@@ -278,14 +292,8 @@ header img{
     text-align: left;
   }
   
-  #logo{
-    display: block;
-    width: 90px;
-    margin: 0 auto;
-  }
-  
   nav{
-    grid-column: 1/-1;
+    grid-column: 3/-1;
   }
 }
 
@@ -305,11 +313,21 @@ header img{
     max-width: 680px;
     margin: 0 auto;
   }
-  
+
+  #homeMain{
+    max-width: 800px;
+    margin: 1rem auto;
+  }
+
   #aboutPlants h3, #contactUs h3{
     grid-column: 1/-1;
     padding-bottom: 0;
   }
+
+   #aboutPlants p{
+    font-size: 1.125rem;
+    padding:2rem;
+   }
   
   #contactUs a{
     grid-column: 2/3;
@@ -320,34 +338,71 @@ header img{
   }
   
   #contactUs p{
-    grid-row: 2/3;
+    grid-row: 1/2;
+    font-size: 1.125rem;
+    padding: 2rem;
   }
 }
 
 /* -----------------------MED SCREEN STYLES-------------------- */
 @media screen and (min-width: 700px){
-  footer div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-}
 
-/* -----------------------LARGE SCREEN STYLES-------------------- */
-@media screen and (min-width: 950px){
+  
   header{
     grid-template-columns: 1fr 2fr 3fr;
   }
-  
+
   nav{
     grid-column: 3/-1;
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
+   h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  #homeMain img{
+    max-width: 620px;
+    box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+  }
+
+  footer div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-bottom: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  footer section:first-of-type{
+  grid-column: 2/3;
+  }
+  footer section h2:first-of-type {
+    text-align: left;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+  footer small {
+    grid-column:1/-1;
+  }
+  #socialMedia{
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  #socialmedia h2 {
+    margin:0;
+  }
+}
+
+/* -----------------------LARGE SCREEN STYLES-------------------- */
+@media screen and (min-width: 950px){
+
   main article:last-of-type{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -368,7 +423,7 @@ header img{
       display: none;
   }
 
-  address a{
+  address a, address span{
       padding: 0.5rem;
   }
 }
